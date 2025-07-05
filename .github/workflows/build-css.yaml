@@ -1,12 +1,18 @@
 # .github/workflows/build-css.yml
-name: Build Tailwind CSS
+name: Build & Deploy Tailwind CSS
 
 on:
   push:
     branches: [ main ]
 
 permissions:
-  contents: write    # allow the GITHUB_TOKEN to push commits
+  contents: write
+  pages: write
+  id-token: write    # allow the GITHUB_TOKEN to push commits
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -29,6 +35,9 @@ jobs:
 
       - name: Build CSS
         run: npm run build:css
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Commit compiled CSS
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -36,3 +45,10 @@ jobs:
           commit_message: "chore: rebuild Tailwind CSS"
           file_pattern: css/styles.css
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - id: deployment
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
