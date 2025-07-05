@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House App Portfolio — Yohann Pittappillil</title>
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+</head>
+<body class="font-inter text-gray-800 leading-relaxed">
+
+  <!-- Navbar -->
+  <nav class="fixed w-full px-8 py-4 flex justify-between items-center bg-transparent transition-colors duration-300 z-50" id="navbar">
+    <img src="assets/logo.png" alt="House Logo" class="h-10"/>
+    <ul class="hidden md:flex space-x-6">
+      <li><a href="#summary" class="hover:text-blue-800">Summary</a></li>
+      <li><a href="#screenshots" class="hover:text-blue-800">Screenshots</a></li>
+      <li><a href="#tech" class="hover:text-blue-800">Tech</a></li>
+      <li><a href="#about" class="hover:text-blue-800">About Me</a></li>
+      <li><a href="#contact" class="hover:text-blue-800">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-600 to-green-400 text-white">
+    <img src="assets/logo.png" alt="House Logo" class="w-32 mb-6"/>
+    <h1 class="text-5xl font-extrabold mb-4">House</h1>
+    <p class="text-xl mb-8">Cross-platform roommate management & chore scheduler</p>
+    <div class="space-x-4">
+      <a href="#screenshots" class="px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100">View Demo</a>
+      <a href="https://github.com/your-repo" target="_blank"
+         class="px-6 py-3 border-2 border-white font-semibold rounded-lg hover:bg-white hover:text-blue-700">GitHub Repo</a>
+    </div>
+  </section>
+
+  <!-- Summary Section -->
+  <section id="summary" class="py-20 px-8 bg-gray-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-semibold mb-6">Executive Summary</h2>
+      <p class="mb-4">
+        <strong>House</strong> is a React Native app designed to streamline shared living...
+      </p>
+      <!-- ...rest of summary... -->
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section id="screenshots" class="py-20 px-8">
+    <h2 class="text-4xl font-semibold text-center mb-12">App Screenshots</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <figure class="relative group">
+        <img src="assets/screenshot-home.png" alt="Home Dashboard" class="rounded-2xl shadow-lg"/>
+        <figcaption class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg rounded-2xl transition-opacity">
+          Home Dashboard
+        </figcaption>
+      </figure>
+      <!-- Repeat for other screenshots -->
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section id="tech" class="py-20 px-8 bg-gray-100">
+    <h2 class="text-4xl font-semibold text-center mb-12">Tech Stack</h2>
+    <div class="flex flex-wrap justify-center items-center space-x-8">
+      <!-- Insert SVG icons in assets/ and reference here -->
+      <div class="flex flex-col items-center">
+        <img src="assets/icon-react-native.svg" class="h-12 mb-2" alt="React Native"/>
+        <span>React Native</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="assets/icon-typescript.svg" class="h-12 mb-2" alt="TypeScript"/>
+        <span>TypeScript</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="assets/icon-firebase.svg" class="h-12 mb-2" alt="Firebase"/>
+        <span>Firebase</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="assets/icon-github.svg" class="h-12 mb-2" alt="GitHub"/>
+        <span>GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Roadmap -->
+  <section id="about" class="py-20 px-8">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-4xl font-semibold mb-6">My Role & Highlights</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Designed Firestore schema & security rules</li>
+          <li>Built swipe-to-edit UIs with Reanimated 2</li>
+          <li>Implemented notification deep-links to the completion modal</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-4xl font-semibold mb-6">Next Steps & Roadmap</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Offline support via MMKV caching</li>
+          <li>Firebase Analytics integration</li>
+          <li>Invite flow powered by Dynamic Links</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <footer id="contact" class="py-12 px-8 bg-blue-800 text-white text-center">
+    <h3 class="text-2xl font-semibold mb-4">Let’s Connect</h3>
+    <p class="mb-6">yohann.pittappillil@email.com · (778) XXX-XXXX</p>
+    <div class="space-x-4">
+      <a href="https://github.com/your-repo" class="underline">GitHub</a>
+      <a href="https://linkedin.com/in/your-profile" class="underline">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- Optional: minimal JS to handle navbar background on scroll -->
+  <script>
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('bg-white shadow-md', window.scrollY > 50);
+    });
+  </script>
+
+</body>
+</html>
