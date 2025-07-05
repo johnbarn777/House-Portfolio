@@ -4,25 +4,34 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: yarn
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Build CSS
-        run: npm run build:css
+        run: yarn build:css
 
       - name: Commit compiled CSS
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "chore: rebuild Tailwind CSS"
           file_pattern: css/styles.css
+          token: ${{ secrets.GITHUB_TOKEN }}
