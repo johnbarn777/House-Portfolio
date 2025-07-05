@@ -1,3 +1,4 @@
+# .github/workflows/build-css.yml
 name: Build Tailwind CSS
 
 on:
@@ -5,7 +6,7 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write
+  contents: write    # allow the GITHUB_TOKEN to push commits
 
 jobs:
   build:
@@ -20,14 +21,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: yarn
+          node-version: '18'
+          cache: 'npm'    # optional: caches ~/.npm to speed installs
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm install
 
       - name: Build CSS
-        run: yarn build:css
+        run: npm run build:css
 
       - name: Commit compiled CSS
         uses: stefanzweifel/git-auto-commit-action@v4
