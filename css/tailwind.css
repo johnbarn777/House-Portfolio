@@ -7,6 +7,6 @@
     @apply rounded-2xl shadow-lg w-full h-auto object-contain max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto;
   }
   .screenshot-item {
-    @apply flex-shrink-0 snap-start;
+     @apply flex-shrink-0 snap-start basis-1/3;
   }
 }
