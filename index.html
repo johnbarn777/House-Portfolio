@@ -103,8 +103,11 @@
         <h2 class="text-4xl font-semibold mb-6">My Role & Highlights</h2>
         <ul class="list-disc pl-5 space-y-2">
           <li>Designed Firestore schema & security rules</li>
-          <li>Built swipe-to-edit UIs with Reanimated 2</li>
+          <li>Built swipe-to-edit UIs </li>
           <li>Implemented notification deep-links to the completion modal</li>
+          <li>Created a custom onboarding flow with Firebase Auth</li>
+          <li>Integrated Firebase Cloud Messaging for real-time updates</li>
+          <li>Designed and modelled the app's data structure, UI/UX and functionality from scratch</li>
         </ul>
       </div>
       <div>
@@ -112,7 +115,10 @@
         <ul class="list-disc pl-5 space-y-2">
           <li>Offline support via MMKV caching</li>
           <li>Firebase Analytics integration</li>
-          <li>Invite flow powered by Dynamic Links</li>
+          <li>In-app purchases for premium features</li>
+          <li>Enhanced notifications with rich media</li>
+          <li>AI-powered chore suggestions</li>
+          <li>Expanded platform support (iOS, Android, Web)</li>
         </ul>
       </div>
     </div>
@@ -121,18 +127,21 @@
   <!-- Contact -->
   <footer id="contact" class="py-12 px-8 bg-secondary text-white text-center">
     <h3 class="text-2xl font-semibold mb-4">Let’s Connect</h3>
-    <p class="mb-6">yohann.pittappillil@email.com · (778) XXX-XXXX</p>
+    <a href="mailto:giro.tamest_3n@icloud.com">
+      <p class="mb-6">Email</p>
+    </a>
     <div class="space-x-4">
-      <a href="https://github.com/your-repo" class="underline">GitHub</a>
-      <a href="https://linkedin.com/in/your-profile" class="underline">LinkedIn</a>
+      <a href="https://github.com/johnbarn777/" target="_blank" rel="noopener noreferrer" class="underline">GitHub</a>
+      <a href="https://www.linkedin.com/in/yohannp/" target="_blank" rel="noopener noreferrer" class="underline">LinkedIn</a>
     </div>
   </footer>
 
   <!-- Optional: minimal JS to handle navbar background on scroll -->
   <script>
     const nav = document.getElementById('navbar');
+    const hero = document.getElementById('hero');
     function updateNav() {
-      const scrolled = window.scrollY > 50;
+      const scrolled = window.scrollY > hero.offsetHeight;
       nav.classList.toggle('bg-white', scrolled);
       nav.classList.toggle('shadow-md', scrolled);
       nav.classList.toggle('text-gray-800', scrolled);
