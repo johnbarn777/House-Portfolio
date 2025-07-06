@@ -10,7 +10,7 @@
 <body class="font-inter text-gray-800 leading-relaxed">
 
   <!-- Navbar -->
-  <nav class="fixed w-full px-8 py-4 flex justify-between items-center bg-transparent transition-colors duration-300 z-50" id="navbar">
+  <nav class="fixed w-full px-8 py-4 flex justify-between items-center bg-transparent text-white transition-colors duration-300 opacity-70 hover:opacity-100 hover:brightness-110 z-50" id="navbar">
     <img src="assets/logo.png" alt="House Logo" class="h-10"/>
     <ul class="hidden md:flex space-x-6">
       <li><a href="#summary" class="hover:text-secondary">Summary</a></li>
@@ -131,9 +131,15 @@
   <!-- Optional: minimal JS to handle navbar background on scroll -->
   <script>
     const nav = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('bg-white shadow-md', window.scrollY > 50);
-    });
+    function updateNav() {
+      const scrolled = window.scrollY > 50;
+      nav.classList.toggle('bg-white', scrolled);
+      nav.classList.toggle('shadow-md', scrolled);
+      nav.classList.toggle('text-gray-800', scrolled);
+      nav.classList.toggle('text-white', !scrolled);
+    }
+    window.addEventListener('scroll', updateNav);
+    updateNav();
   </script>
 
 </body>
